@@ -1,0 +1,25 @@
+.Link-with-underline {
+    white-space: nowrap;
+    color: $c-link;
+    position: relative;
+    font-weight: 700;
+
+    &:after {
+        content: '';
+        position: absolute;
+        width: 100%; height: 0.2em;
+        transition: all 0.3s $ease-in-out-quart;
+        transform-origin: left center;
+
+        transform: scale(0,1);
+        background: $c-link;
+        left: 0;
+        bottom: -0.4em;
+    }
+
+    &:hover, &:active, &:focus {
+        &:after {
+            transform: scale(1,1);
+        }
+    }
+}

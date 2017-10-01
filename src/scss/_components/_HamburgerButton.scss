@@ -1,0 +1,42 @@
+.HamburgerButton {
+    border: 1px solid rgba($c-lightblue, 0.2);
+    width: 3em;
+    height: 3em;
+    position: relative;
+    top: -0.6em;
+    transition: 0.3s $ease-in-out-quart;
+    cursor: pointer;
+
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        width: 50%;
+        height: 2px;
+        background: $c-white;
+        left: 25%;
+        top: 50%;
+    }
+
+    &:before {
+        transform: translateY(-0.3em);
+        transition: 0.5s $ease-in-out-quart;
+    }
+
+    &:after {
+        transform: translateY(0.3em);
+        transition: 0.5s $ease-in-out-quart;
+    }
+
+    &:hover {
+        background: rgba($c-lightblue, 0.1);
+    }
+}
+
+.opened .HamburgerButton{
+    &:before {
+        transform: rotate(-135deg);
+    }
+    &:after {
+        transform: rotate(135deg);
+    }
+}

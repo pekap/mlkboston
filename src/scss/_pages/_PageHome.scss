@@ -1,0 +1,148 @@
+.Page[name=PageHome] {
+    section {
+        position: relative;
+        max-width: 1000px;
+        margin: 0px auto;
+        padding: 0 6em;
+
+        padding-top: 14em;
+
+        & > *, & > * > * {
+            animation: slideIn 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+            animation-fill-mode: both;
+
+            &:nth-child(3) {
+                transform: translateY(4em);
+            }
+
+            @for $i from 1 through 20 {
+                &:nth-child(#{$i}) {
+                    transform: translateY((1.5 - 1/($i*0.5+0.5))*2em);
+                    animation-delay: (1 - 1/$i)*0.1s;
+                }
+            }
+
+            opacity: 0;
+            transform: translateY(3em);
+        }
+
+        @media (max-width: $m-small) {
+            flex-direction: column;
+            padding: 0 6em;
+            padding-top: 7em;
+        }
+        @media (max-width: $m-small) {
+            flex-direction: column;
+            padding: 0 6em;
+            padding-top: 7em;
+
+            .l-col-50 {
+                margin: 0;
+            }
+            .l-col-50 + .l-col-50 {
+                margin-top: 1em;
+            }
+        }
+
+        @media (max-width: $m-xsmall) {
+            flex-direction: column;
+            padding: 0 3em;
+            padding-top: 7em;
+        }
+    }
+}
+
+section[name=aboutme] {
+    .NameBlock {
+        margin-top: 1em;
+
+        h1 {
+            margin: 0;
+        }
+
+        h2 {
+            padding-left: 14.6em;
+            margin-top: 1em;
+
+            $i: 15;
+            transform: translateY((1.5 - 1/($i*0.5+0.5))*2em)!important;
+            animation-delay: (1 - 1/$i)*0.1s!important;
+        }
+    }
+
+    .IntroBlock {
+        // margin-left: 3em;
+        p {
+            max-width: 24em;
+        }
+    }
+
+    @media (max-width: $m-medium) {
+        .NameBlock {
+            h1 {
+                font-size: 400%;
+            }
+            h2 {
+                padding-left: 9em;
+            }
+        }
+
+        .DecorativeLine--vertical-lg {
+            display: none;
+        }
+
+        & > * {
+            flex: 1 1 auto;
+        }
+    }
+
+    @media (max-width: $m-small) {
+        .IntroBlock {
+            margin-left: 0;
+            p {
+                max-width: none;
+            }
+        }
+        .NameBlock {
+            h2 {
+                display: none;
+            }
+            h1 {
+                font-size: 300%;
+                line-height: 1.4em;
+                margin-bottom: 0.5em;
+            }
+        }
+    }
+
+    @media (max-width: $m-xsmall) {
+        .NameBlock {
+            h1 {
+                font-size: 200%;
+            }
+        }
+    }
+}
+
+section[name=services] {
+
+}
+
+section[name=experience] {
+    .Experience {
+        font-size: 20px;
+        font-weight: bold;
+        padding: 0.8em 0;
+
+        @media (max-width: $m-xsmall) {
+            font-size: 1em;
+        }
+    }
+}
+
+@keyframes slideIn {
+    100% {
+        opacity: 1;
+        transform: translateY(0) translateX(0);
+    }
+}

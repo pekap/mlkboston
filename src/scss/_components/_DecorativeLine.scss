@@ -1,0 +1,7 @@
+.DecorativeLine {
+    height: 1px; width: 1px;
+    background: $c-lightblue;
+    opacity: 0.1;
+    border-radius: 2px;
+    // background: linear-gradient(to bottom, rgba($c-c,0), rgba($c-c,0.2) 30%, $c-c);
+}

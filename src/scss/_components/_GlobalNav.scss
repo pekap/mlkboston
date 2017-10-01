@@ -1,0 +1,143 @@
+.NavOverlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.GlobalNav {
+    pointer-events: all;
+    padding: 2em;
+    padding-bottom: 1em;
+
+    .Logo {
+        margin-right: 1em;
+        font-family: $f-secondary;
+    }
+
+    .Menu {
+        margin-left: 2em;
+        text-align: right;
+
+        &__Hamburger {
+            display: none;
+        }
+
+        @media (max-width: $m-medium) {
+            max-width: 500px;
+
+            &__Links a {
+                margin-bottom: 1em;
+            }
+        }
+
+        @media (max-width: $m-small) {
+            &__Hamburger {
+                display: inline-block;
+                margin-bottom: 1em;
+            }
+            &__Links {
+                // margin-top: 2em;
+                position: relative;
+                // background: $c-black;
+                display: none;
+
+                a {
+                    // transform: translateX(-3em);
+                    opacity: 0;
+
+                    display: block;
+                    margin: 1em 0;
+
+                    @for $i from 1 through 10 {
+                        &:nth-child(#{$i}) {
+                            transition-delay: (5-$i)*0.06s;
+                        }
+                    }
+
+                    &.current-page {
+                        opacity: 0;
+                    }
+
+                    &:after {
+                        background: none!important;
+                    }
+                }
+            }
+
+            &.opened {
+                 .Hamburger {
+                 }
+
+                 .Menu__Links a {
+                     transform: translateX(0);
+                     opacity: 1;
+
+                     &.current-page {
+                         opacity: 1;
+                     }
+
+                     @for $i from 1 through 20 {
+                         transition-delay: 0s;
+                     }
+                 }
+            }
+        }
+    }
+
+    a {
+        transition: 0.3s 0s $ease-in-out-quad;
+        // font-family: $f-secondary;
+        display: inline-block;
+        margin-bottom: 0.5em;
+        text-transform: capitalize;
+        // letter-spacing: 0.05em;
+        color: $c-white;
+        font-weight: 400;
+        opacity: 0.8;
+
+        &:hover, &.current-page {
+            color: $c-link;
+            opacity: 1;
+        }
+        &.current-page {
+            font-weight: 400;
+
+            &:after {
+                transform: scale(1,1);
+            }
+        }
+    }
+}
+
+.Menu {
+    a + a {
+        margin-left: 2em;
+    }
+}
+
+.Logo {
+    font-weight: 600;
+    letter-spacing: 3px;
+
+    span {
+        font-weight: 300;
+    }
+}
+
+a.Logo {
+    &:after {
+        background: none!important;
+    }
+}
+
+.ProjectStarted {
+    text-transform: uppercase;
+    color: $c-lightblue;
+    font-size: 0.9em;
+    letter-spacing: 0.2em;
+
+    span {
+        color: $c-white;
+    }
+}
