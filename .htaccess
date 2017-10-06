@@ -1,0 +1,3 @@
+<IfModule include_module>
+	SSILegacyExprParser on
+</IfModule>
