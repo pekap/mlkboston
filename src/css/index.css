@@ -792,7 +792,7 @@ section[name=experience] .Experience {
     -webkit-transform: translateX(2em) scale(1.2);
             transform: translateX(2em) scale(1.2); }
   100% {
-    opacity: 0.4;
+    opacity: 0.5;
     -webkit-transform: scale(1);
             transform: scale(1); } }
 
@@ -802,7 +802,7 @@ section[name=experience] .Experience {
     -webkit-transform: translateX(2em) scale(1.2);
             transform: translateX(2em) scale(1.2); }
   100% {
-    opacity: 0.4;
+    opacity: 0.5;
     -webkit-transform: scale(1);
             transform: scale(1); } }
 
