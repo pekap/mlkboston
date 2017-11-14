@@ -1,0 +1,19 @@
+a.CTA {
+    padding: 0.7em 1em;
+    background: $c-primary;
+    color: $c-black;
+    margin: 2em 0;
+    display: inline-block;
+
+    &:after, &:before {
+        opacity: 0;
+    }
+
+    &:hover {
+        background: darken($c-primary, 5%);
+    }
+
+    &:active {
+        background: darken($c-primary, 10%);
+    }
+}
