@@ -24,10 +24,16 @@
         }
 
         @media (max-width: $m-medium) {
-            max-width: 600px;
+            max-width: 650px;
 
             &__Links a {
                 margin-bottom: 1em;
+            }
+        }
+
+        @media (min-width: $m-small) {
+            &__Links {
+                display: initial!important;
             }
         }
 

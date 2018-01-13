@@ -30,6 +30,10 @@
     font-weight: bold;
 }
 
+.is-hidden {
+    display: none;
+}
+
 .is-hidden-below-small {
     @media (max-width: $m-small) {
         display: none!important;
