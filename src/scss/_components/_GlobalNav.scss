@@ -13,6 +13,11 @@
     .Logo {
         margin-right: 1em;
         font-family: $f-secondary;
+        width: 120px;
+        height: 30px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
     }
 
     .Menu {
@@ -24,7 +29,7 @@
         }
 
         @media (max-width: $m-medium) {
-            max-width: 650px;
+            // max-width: 650px;
 
             &__Links a {
                 margin-bottom: 1em;
@@ -95,7 +100,7 @@
         transition: 0.3s 0s $ease-in-out-quad;
         // font-family: $f-secondary;
         display: inline-block;
-        margin-bottom: 0.5em;
+        // margin-bottom: 0.5em;
         text-transform: capitalize;
         // letter-spacing: 0.05em;
         color: $c-white;
