@@ -1,3 +1,9 @@
+.is-page-fullwidth {
+    & > * {
+        max-width: none;
+    }
+}
+
 .is-highlighted {
     color: $c-primary;
 }
